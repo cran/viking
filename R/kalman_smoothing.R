@@ -32,7 +32,6 @@ kalman_smoothing <- function(X, y, theta1, P1, Q=0, sig=1) {
     theta_arr[t,] <- theta
     P_arr[t,,] <- P
     if (sum(is.na(c(X[t,],y[t]))) == 0) {
-      P <- P - tcrossprod(P %*% Xt) / (sig^2 + crossprod(Xt, P %*% Xt)[1])
       theta <- theta + P %*% Xt * (y[t] - crossprod(theta, Xt)[1]) / sig^2
       P <- P + Q
     }

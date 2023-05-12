@@ -63,7 +63,7 @@ plot.statespace <- function(x, pause = FALSE, window_size = 7, date = NULL, sel 
   # 3. Evolution of the state coefficients
   # Kalman Filtering
   plot_evol <- function(evol, title, coln = NULL, logpar='') {
-    c <- RColorBrewer::brewer.pal(n = ncol(evol), name = "Spectral")
+    c <- RColorBrewer::brewer.pal(max(ncol(evol), 11), name = "Spectral")[sapply(1:ncol(evol), function(i) min(i,11))]
     plot(date_sel, evol[,1], type='l', ylim=range(evol), col=c[1],
          main=title, ylab='', xlab='', lwd=2, log=logpar)
     for (j in 2:ncol(evol))
@@ -104,7 +104,7 @@ plot.statespace <- function(x, pause = FALSE, window_size = 7, date = NULL, sel 
   if (!is.null(x$kf)) {
     diagQ <- diag(x$kalman_params$Q)
     # diagQ[diagQ == 0] <- NA
-    c <- RColorBrewer::brewer.pal(length(diagQ), name = "Spectral")
+    c <- RColorBrewer::brewer.pal(max(length(diagQ), 11), name = "Spectral")[sapply(1:length(diagQ), function(i) min(i,11))]
     plot(c(1:length(diagQ)), diagQ, type='h', xlab='', ylab='', col=c, axes=FALSE,
          main='Diagonal of Q', ylim=c(0,max(diagQ)*1.4))
     text(c(1:length(diagQ)), diagQ, labels=format(diagQ, scientific=TRUE, digits=2),

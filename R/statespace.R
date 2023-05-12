@@ -39,7 +39,7 @@ statespace <- function(X, y, kalman_params = NULL, viking_params = NULL, ...) {
     vp$P <- filter_null(vp$P, diag(d))
     vp$hata <- filter_null(vp$hata, 0)
     vp$s <- filter_null(vp$s, 0)
-    viking_params$mode <- filter_null(viking_params$mode, 'diagonal')
+    vp$mode <- filter_null(viking_params$mode, 'diagonal')
     vp$hatb <- filter_null(vp$hatb, if (viking_params$mode == 'scalar') 0 else matrix(0, d, 1))
     vp$Sigma <- filter_null(vp$Sigma, if (viking_params$mode == 'scalar') 0 else diag(d, x=0))
   }
