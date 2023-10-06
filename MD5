@@ -1,4 +1,4 @@
-077285a30cfed45a63609eee346d87c3 *DESCRIPTION
+2acf3ed86b08725391bf74a0c6e7b9a7 *DESCRIPTION
 e9c8b1559d11eac15ee046d595d2a450 *NAMESPACE
 d678fd37b3292ff4db0b5db0fe0cea99 *R/expectation-maximization.R
 e14fc7e7047c4cf7cab9b1e0954348a6 *R/iterative_grid_search.R
@@ -6,10 +6,10 @@ b21a217d4bb32a5cdd223fb27d899012 *R/kalman_filtering.R
 3404f1f4cd04e8483f391fe4170744d2 *R/kalman_smoothing.R
 63e82d79164c1078c3367a971849abf7 *R/loglik.R
 d74d93cc983f60fd3142857223a67903 *R/plot-statespace.R
-591d4ec353a44aea726f7b1884e93be5 *R/predict-statespace.R
+1612079894a794023ca8842ac8209b46 *R/predict-statespace.R
 ffd715c90f593253678fb1d7bbc1f8df *R/select_Kalman_variances-statespace.R
 2d756469ee5afd0e1b34c64ea8289e60 *R/statespace.R
-099a86b134693c7edec5a9b89a1c5d09 *R/viking.R
+92da009d54bb4d9c16af8d06cfb1e75b *R/viking.R
 3abd63c20d6f1c9b0fdefeada2465c9d *man/expectation_maximization.Rd
 31f8547da52de467a0ca124338e9e59d *man/iterative_grid_search.Rd
 a9fde3f1993c6ad371537d709101d637 *man/kalman_filtering.Rd

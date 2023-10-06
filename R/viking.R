@@ -74,7 +74,7 @@ viking <- function(X, y, theta0, P0, hata0, s0, hatb0, Sigma0, n_iter = 2, mc = 
     else if (mode == 'diagonal')
       q_arr[t,] <- colMeans(phi( mvtnorm::rmvnorm(10^3, mean=hatb_new, sigma=Sigma_new) ))
     theta_arr[t,] <- K %*% theta
-    P_arr[t,,] <- K %*% P %*% t(K) + diag(diag(q_arr[t,]))
+    P_arr[t,,] <- K %*% P %*% t(K) + diag(q_arr[t,])
 
     hata_arr[t] <- hata_new
     s_arr[t] <- s_new

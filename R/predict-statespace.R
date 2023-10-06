@@ -61,9 +61,9 @@ predict.statespace <- function(object, newX, newy = NULL, online = TRUE, compute
     } else {
       object_new$vik <- do.call(viking, c(list(X = newX, y = newy), object$viking_params))
       object_new$pred_mean <- sapply(1:nrow(X), function(t) {crossprod(object_new$vik$theta_arr[t,], X[t,])[1]})
-      object_new$pred_sd <- sapply(1:nrow(X), function(t) {
-        sqrt(crossprod(X[t,], object_new$vik$P_arr[t,,] %*% X[t,]))
-      }) + exp(object_new$vik$hata + object_new$vik$s / 2)
+      object_new$pred_sd <- sqrt(sapply(1:nrow(X), function(t) {
+        crossprod(X[t,], object_new$vik$P_arr[t,,] %*% X[t,])
+      }) + exp(object_new$vik$hata + object_new$vik$s / 2) )
     }
   } else {
     theta <- if (is.null(object$viking_params)) object$kalman_params$theta else object$viking_params$theta
